@@ -17,12 +17,15 @@
 
 ---
 
-## 🏗️ 模型架构
+## 📂 数据集 (Dataset)
 
-```mermaid
-graph LR
-    A[原始 PPG 信号] --> B(预处理: 滤波+标准化)
-    B --> C[1D-CNN 层]
-    C -->|提取形态特征| D[Bi-LSTM 层]
-    D -->|提取时序特征| E[全连接层 FC]
-    E --> F[输出: SBP / DBP]
+本项目使用业界权威的 **UCI Cuff-less Blood Pressure Dataset** (源自 MIMIC-II)。
+
+* **数据来源**: [Kaggle: Cuff-less Blood Pressure Estimation Dataset](https://www.kaggle.com/datasets/mkachuee/blood-pressure-dataset)
+* **文件要求**: 请下载数据集中的 `part_1.mat` 文件。
+* **数据内容**: 
+    * **PPG (Photoplethysmogram)**: 指尖脉搏波信号 (125Hz)
+    * **ABP (Arterial Blood Pressure)**: 有创动脉血压信号 (作为 Ground Truth 标签)
+    * **ECG (Electrocardiogram)**: 心电信号 (本项目主要使用 PPG)
+
+---
